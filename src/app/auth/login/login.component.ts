@@ -46,9 +46,10 @@ export class LoginComponent implements OnInit {
         tap(user => {
           console.log(user);
 
+          const newLoginAction = login({user});
 
           this.store.dispatch(
-            login({user})
+            newLoginAction
           );
 
 
