@@ -53,7 +53,8 @@ const routes: Routes = [
         MatToolbarModule,
         AuthModule.forRoot(), // eager loading
         StoreModule.forRoot({}, {}),
-        StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })], 
+        StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }), 
+        EffectsModule.forRoot([])],
         providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {
 }
