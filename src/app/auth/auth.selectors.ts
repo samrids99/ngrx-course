@@ -1,7 +1,11 @@
-import { createSelector } from "@ngrx/store";
+import { createFeatureSelector, createSelector } from "@ngrx/store";
+import { create } from "domain";
+import { AuthState } from "./reducers";
 
-export const isLoggedIn = createSelector(
-    state => state["auth"],
+export const selectAuthState = createFeatureSelector<AuthState>("auth");
+
+export const isLoggedIn = createSelector(  // a selector is a mapping function that has memorization
+    selectAuthState,
     (auth) => !!auth.user
 );
 
