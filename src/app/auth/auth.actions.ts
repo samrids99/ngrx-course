@@ -7,3 +7,7 @@ export const login = createAction(
 );
 
 const newLoginAction = login({user: {id: '1', email: ''}});
+
+export const logout = createAction(
+    "[Top Menu] Logout" // no payload needed here
+);

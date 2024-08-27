@@ -9,6 +9,7 @@ import { noop } from "rxjs";
 import { Router } from "@angular/router";
 import { AppState } from '../reducers';
 import { login } from '../auth.actions';
+import { AuthActions } from '../action-types';
 
 @Component({
   selector: 'login',
@@ -38,6 +39,8 @@ export class LoginComponent implements OnInit {
 
   login() {
     const value = this.form.value;
+
+    AuthActions.login({user: {id: '1', email: ''}});
 
     this.auth.login(value.email, value.password)
       .pipe(
