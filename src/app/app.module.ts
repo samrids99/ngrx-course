@@ -26,7 +26,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 const routes: Routes = [
   {
     path: 'courses',
-    loadChildren: () => import('./courses/courses.module').then(m => m.CoursesModule)
+    loadChildren: () => import('./courses/courses.module').then(m => m.CoursesModule)  // Lazy loading
   },
   {
     path: '**',
@@ -49,7 +49,7 @@ const routes: Routes = [
         MatProgressSpinnerModule,
         MatListModule,
         MatToolbarModule,
-        AuthModule.forRoot(),
+        AuthModule.forRoot(), // eager loading
         StoreModule.forRoot({}, {}),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() })], 
         providers: [provideHttpClient(withInterceptorsFromDi())] })
