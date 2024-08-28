@@ -69,6 +69,17 @@ export class EditCourseDialogComponent {
 
       this.dialogRef.close();
 
+    } else if (this.mode == 'create') {
+
+      this.coursesService.add(course) // pessimistic by default
+        .subscribe( // we subscribe here because we want to know when the operation is complete
+          newCourse => {
+            console.log('New Course:', newCourse);
+            this.dialogRef.close();
+          }
+        )
+
+
     }
 
 
