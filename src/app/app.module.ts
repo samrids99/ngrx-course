@@ -54,7 +54,8 @@ const routes: Routes = [
         AuthModule.forRoot(), // eager loading
         StoreModule.forRoot({}, {}),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }), 
-        EffectsModule.forRoot([])],
+        EffectsModule.forRoot([]),
+        EntityDataModule.forRoot({})],
         providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule {
 }
